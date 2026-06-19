@@ -1,6 +1,7 @@
 // import { Card } from "@/components/card";
 
 import { CategoryCard } from "@/components/categoryCard";
+import FooterSkinBoxd from "@/components/footer";
 import Image from "next/image";
 
 const CATEGORIES = [
@@ -9,30 +10,35 @@ const CATEGORIES = [
     title: "Maquiagem",
     imageSrc: "/image/teste-bg7.png",
     altText: "Categoria Maquiagem",
+    urlPage: "/makeup",
   },
   {
     id: "skin",
     title: "Skincare",
     imageSrc: "/image/teste-bg11.png",
     altText: "Categoria Skincare",
+    urlPage: "/makeup",
   },
   {
     id: "cab",
     title: "Cabelo",
     imageSrc: "/image/cabelo-teste.jpeg",
     altText: "Categoria Cabelo",
+    urlPage: "/makeup",
   },
   {
     id: "perf",
     title: "Perfume",
     imageSrc: "/image/perfume.jpeg",
     altText: "Categoria Perfume",
+    urlPage: "/makeup",
   },
   {
     id: "rot",
     title: "Rotina",
     imageSrc: "/image/rotina.png",
     altText: "Categoria Rotina",
+    urlPage: "/makeup",
   },
 ];
 
@@ -46,7 +52,7 @@ export default function HomePage() {
         </div>
         <div className="text-2xl">Foto</div>
       </div>
-      <div className="grid grid-cols-2 gap-2 gap-y-4 pl-4.5 pr-4.5 pt-7">
+      <div className="grid grid-cols-2 gap-2 gap-y-4 pl-4.5 pr-4.5 pt-7 pb-12">
         {CATEGORIES.map((category, index) => {
           const isLast = index === CATEGORIES.length - 1;
           return (
@@ -58,10 +64,12 @@ export default function HomePage() {
               sizeClassName={
                 isLast ? "col-span-2 aspect-[2/1] h-44" : "aspect-[3/4]"
               }
+              urlPage={category.urlPage}
             />
           );
         })}
       </div>
+      <FooterSkinBoxd />
     </main>
   );
 }

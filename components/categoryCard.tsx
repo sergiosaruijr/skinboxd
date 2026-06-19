@@ -1,9 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface CategoryCardProps {
   title: string;
   imageSrc: string;
   altText: string;
+  urlPage?: string | undefined;
   sizeClassName?: string;
 }
 
@@ -11,13 +13,16 @@ export function CategoryCard({
   title,
   imageSrc,
   altText,
+  urlPage,
   sizeClassName = "",
 }: CategoryCardProps) {
   return (
-    <div
+    <Link
       className={`relative group overflow-hidden rounded-2xl cursor-pointer w-full ${sizeClassName}`}
+      href={urlPage || "/"}
     >
       {/* ── IMAGEM DE FUNDO ── */}
+
       <Image
         src={imageSrc}
         alt={altText}
@@ -36,6 +41,6 @@ export function CategoryCard({
           {title}
         </h3>
       </div>
-    </div>
+    </Link>
   );
 }
