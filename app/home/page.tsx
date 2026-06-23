@@ -17,21 +17,21 @@ const CATEGORIES = [
     title: "Skincare",
     imageSrc: "/image/teste-bg11.png",
     altText: "Categoria Skincare",
-    urlPage: "/makeup",
+    urlPage: "/skincare",
   },
   {
     id: "cab",
     title: "Cabelo",
     imageSrc: "/image/cabelo-teste.jpeg",
     altText: "Categoria Cabelo",
-    urlPage: "/makeup",
+    urlPage: "/hair",
   },
   {
     id: "perf",
     title: "Perfume",
     imageSrc: "/image/perfume.jpeg",
     altText: "Categoria Perfume",
-    urlPage: "/makeup",
+    urlPage: "/perfume",
   },
   {
     id: "rot",
@@ -52,7 +52,7 @@ export default function HomePage() {
         </div>
         <div className="text-2xl">Foto</div>
       </div>
-      <div className="grid grid-cols-2 gap-2 gap-y-4 pl-4.5 pr-4.5 pt-7 pb-12">
+      <div className="grid grid-cols-2 gap-2 gap-y-4 pl-4.5 pr-4.5 pt-7 pb-10">
         {CATEGORIES.map((category, index) => {
           const isLast = index === CATEGORIES.length - 1;
           return (
